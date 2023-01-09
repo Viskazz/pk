@@ -1,0 +1,17 @@
+[package]
+name = "pk"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+port-killer = "0.1.0"
+argh = "0.1.7"
+
+[profile.release]
+strip = true # Auto strip simbols from the binary
+opt-level = "s" # Optimize for size
+lto = true # Enable link time optimization
+codegen-units = 1 # Maximize size reduction optimization
+target_cpu="native"
